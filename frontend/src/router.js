@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Customers from './views/CustomerList.vue'
+import ContList from './views/ContList.vue'
+import Home from './views/Home.vue'
 
 Vue.use(Router) //플러그인 등록
 
@@ -8,8 +9,12 @@ export default new Router({
 mode: 'history',
 routes: [
 {
-path: '/customers',
-component: Customers
+    path: '/contlist',
+    component: ContList
+},
+{
+    path: '/',
+    component: Home
 }
 ]
 })
