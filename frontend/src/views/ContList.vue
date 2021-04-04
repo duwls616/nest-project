@@ -18,6 +18,14 @@
 
                   :key="idx"
                 >
+                  <v-list-item-icon>
+                    <v-icon
+                      large
+                      right
+                    >
+                      mdi-account
+                    </v-icon>
+                  </v-list-item-icon>
 
                   <v-list-item-content>
                     <v-list-item-title class="headline mb-1">
@@ -28,12 +36,12 @@
                       {{ item.comp }} / {{ item.job }}
                     </v-list-item-subtitle>
                   </v-list-item-content>
+                  <img v-bind:id="`kakao-link-btn-${item.no}`" src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+                  @click="sendKakaoLink(`${item.no}`);"/>
                   <v-list-item-avatar
                   tile
                   size="30"
                   >
-                  <img id="kakao-link-btn" src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-                  @click="sendKakaoLink();"/>
                 </v-list-item-avatar>
                 </v-list-item>
 
@@ -78,16 +86,36 @@ export default {
       })
 
     },
-    sendKakaoLink(){
-      window.Kakao.Link.createCustomButton({
-        container: '#kakao-link-btn',
-        templateId: 48876,
-        templateArgs: {
-          title:
-            '유비케어 회원가입',
-          description:
-            '채널추가 및 회원가입을 하시면 더 많은 정보를 받아보실 수 있습니다.',
+    sendKakaoLink(no){
+      window.Kakao.Link.createDefaultButton({
+        container: '#kakao-link-btn-' + no,
+        objectType: 'feed',
+        content: {
+          title: '유비케어 신장사업부',
+          description: '채널추가 및 회원가입 하시면더 많은 정보를 받아보실 수 있습니다.',
+          imageUrl:
+            'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
         },
+        buttons: [
+          {
+            title: '가입하기',
+            link: {
+              mobileWebUrl: 'http://localhost:8080/join/' + no,
+              webUrl: 'http://localhost:8080/join/' + no,
+            },
+          },
+          {
+            title: '채널추가',
+            link: {
+              mobileWebUrl: 'http://localhost:8080/join/' + no,
+              webUrl: 'http://localhost:8080/join/' + no,
+            },
+          },
+        ],
       });
     },
   },
