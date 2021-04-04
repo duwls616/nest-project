@@ -8,6 +8,8 @@ Vue.prototype.$axios = axios;
 
 Vue.config.productionTip = false
 
+window.Kakao.init('5d3c28c356903cf178b0ff3f1554d59b');
+
 new Vue({
   router,
   vuetify,
