@@ -104,15 +104,15 @@ export default {
           {
             title: '가입하기',
             link: {
-              mobileWebUrl: 'http://localhost:8080/join/' + no,
-              webUrl: 'http://localhost:8080/join/' + no,
+              mobileWebUrl: 'http://localhost:8080/cont/join/' + no,
+              webUrl: 'http://localhost:8080/cont/join/' + no,
             },
           },
           {
             title: '채널추가',
             link: {
-              mobileWebUrl: 'http://localhost:8080/join/' + no,
-              webUrl: 'http://localhost:8080/join/' + no,
+              mobileWebUrl: 'http://localhost:8080/cont/join/' + no,
+              webUrl: 'http://localhost:8080/cont/join/' + no,
             },
           },
         ],
