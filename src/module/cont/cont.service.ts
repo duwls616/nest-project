@@ -8,7 +8,7 @@ export class ContService {
     getContList(): Cont[]{
 
         const user = [{
-            no: 1,
+            contId: 'C1324',
             name: '최형철',
             comp: '하늘병원',
             age: 43,
@@ -16,7 +16,7 @@ export class ContService {
             job: '의사'
         },
         {
-            no: 2,
+            contId: 'C1324',
             name: '김영희',
             comp: '가톨릭대병원',
             age: 52,
