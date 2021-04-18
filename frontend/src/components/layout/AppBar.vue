@@ -99,7 +99,7 @@ export default {
           id: 1,
           icon: "mdi-account-multiple",
           title: "고객목록",
-          target: "contlist"
+          target: "/mr/contlist"
         },
         {
           id:2,

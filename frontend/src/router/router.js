@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ContList from '../views/admin/ContList.vue'
+import ContList from '../views/mr/ContList.vue'
 import Home from '../views/Home.vue'
 import Join from '../views/cont/Join.vue'
-import JoinAuth from '../views/cont/JoinAuth.vue'
+import JoinForm from '../views/cont/JoinForm.vue'
 Vue.use(Router) //플러그인 등록
 
 export default new Router({
 mode: 'history',
 routes: [
 {
-    path: '/contlist',
+    path: '/mr/contlist',
     component: ContList
 },
 {
@@ -23,8 +23,8 @@ routes: [
     props: { sidebar: false }
 },
 {
-    path: '/cont/joinAuth',
-    component: JoinAuth,
+    path: '/cont/joinForm',
+    component: JoinForm,
     props: { sidebar: false }
 }
 ]

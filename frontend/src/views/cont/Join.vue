@@ -29,7 +29,7 @@ export default {
   methods: {
     loginWithKakao() {
         const params = {
-            redirectUri: "http://localhost:8080/cont/joinAuth",
+            redirectUri: "http://localhost:8080/cont/joinForm",
         };
         window.Kakao.Auth.authorize(params);
     },
