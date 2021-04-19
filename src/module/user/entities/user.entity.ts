@@ -1,13 +1,11 @@
-
-import {Entity, Column, PrimaryGeneratedColumn, Index} from 'typeorm';
+import {Column, Entity, PrimaryColumn, PrimaryGeneratedColumn} from 'typeorm/index';
 
 @Entity('KYJ_USER')
-@Index(['userId'])
 export class User {
     @PrimaryGeneratedColumn()
     userSeq: number;
 
-    @Column({ length: 40, unique: true})
+    @PrimaryColumn()
     userId: string;
     
     @Column({ length: 100})
