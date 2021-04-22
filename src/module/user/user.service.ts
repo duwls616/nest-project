@@ -15,7 +15,7 @@ export class UserService {
         return await this.userRepository.find();
     }
 
-    create(userData: CreateUserDto){
-        //return this.userRepository.create(userData);
+    async create(userData: CreateUserDto) : Promise<void> {
+        //await this.userRepository.save(userData);
     }
 }
