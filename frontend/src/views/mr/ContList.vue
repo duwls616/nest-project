@@ -36,8 +36,8 @@
                       {{ item.comp }} / {{ item.job }}
                     </v-list-item-subtitle>
                   </v-list-item-content>
-                  <img v-bind:id="`kakao-link-btn-${item.no}`" src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-                  @click="sendKakaoLink(`${item.no}`);"/>
+                  <img v-bind:id="`kakao-link-btn-${item.contId}`" src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+                  @click="sendKakaoLink(`${item.contId}`);"/>
                   <v-list-item-avatar
                   tile
                   size="30"
@@ -61,10 +61,11 @@
 <script>
 export default {
   data: () => ({
+    redirectUrl: 'http://localhost:8080/cont/join/',
     cards: ['고객목록'],
     contList: [
     {
-      id: '',
+      contId: '',
       name: '',
       comp: '',
       age: '',
@@ -96,7 +97,7 @@ export default {
           imageUrl:
             'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
           link: {
-            mobileWebUrl: 'https://developers.kakao.com',
+            mobileWebUrl: '',
             webUrl: 'https://developers.kakao.com',
           },
         },
@@ -104,15 +105,15 @@ export default {
           {
             title: '가입하기',
             link: {
-              mobileWebUrl: 'http://localhost:8080/cont/join/' + no,
-              webUrl: 'http://localhost:8080/cont/join/' + no,
+              mobileWebUrl: this.redirectUrl + no,
+              webUrl: this.redirectUrl + no,
             },
           },
           {
             title: '채널추가',
             link: {
-              mobileWebUrl: 'http://localhost:8080/cont/join/' + no,
-              webUrl: 'http://localhost:8080/cont/join/' + no,
+              mobileWebUrl: this.redirectUrl + no,
+              webUrl: this.redirectUrl + no,
             },
           },
         ],

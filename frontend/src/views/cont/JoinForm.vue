@@ -120,6 +120,8 @@
  
 export default ({
     data: () => ({
+        adminKey : 'bfb854d5578bcc7cc0fa5d5b1272933b',
+        restKey : '9b5dd25de9bd0da6ed28afef748d1371',
         valid: true,
         name: '',
         nameRules: [
@@ -151,14 +153,14 @@ export default ({
         // 토큰발급
         async getAccessToken() {
             const kakaoHeader = {
-                'Authorization': 'bfb854d5578bcc7cc0fa5d5b1272933b',//ADMIN 키
+                'Authorization': this.data.adminKey,//ADMIN 키
                 'Content-type': 'application/x-www-form-urlencoded;charset=utf-8',
             };
             console.log('kakao authorization');
             try {
                 const data = {
                     grant_type: 'authorization_code',
-                    client_id: '9b5dd25de9bd0da6ed28afef748d1371',//REST API 키
+                    client_id: this.data.restKey,//REST API 키
                     redirect_uri: 'http://localhost:8080/cont/joinForm',
                     // 인가코드
                     code: this.$route.query.code,
@@ -185,7 +187,7 @@ export default ({
         async getKakaoUserInfo() {
             let res = '';
             await window.Kakao.API.request({
-                url: '/v2/user/me',
+                url: 'e/v2/user/m',
                 success: function (response) {
                     res = response;
                 },

@@ -11,7 +11,6 @@
 import MainAppBar from './components/layout/AppBar';
 
 export default {
-  name: 'inspire',
   components: {
     MainAppBar,
   },

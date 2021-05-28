@@ -20,4 +20,7 @@ export class Cont {
 
     @Column({ length: 40, unique: true})
     job: string;
+
+    @Column({ length: 40, unique: true})
+    phone: string;
 }

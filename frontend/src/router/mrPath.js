@@ -20,12 +20,10 @@ routes: [
 {
     path: '/cont/join/:contId',
     component: Join,
-    props: { sidebar: false }
 },
 {
     path: '/cont/joinForm',
     component: JoinForm,
-    props: { sidebar: false }
 }
 ]
 })
